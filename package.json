@@ -1,0 +1,25 @@
+{
+  "name": "nodejs boilerplate",
+  "version": "1.0.0",
+  "description": "Simple Node.js + Express boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "test": "jasmine-node tests"
+  },
+  "author": "Boris FELIX",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "lodash": "4.3.0",
+    "moment": "^2.11.0",
+    "mongoose": "^4.5.1",
+    "winston": "^2.1.1",
+    "request" : "^2.73.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5",
+    "supertest": "^1.1.0",
+    "pm2": "^1.1.3"
+  }
+}

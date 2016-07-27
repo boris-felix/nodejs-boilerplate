@@ -1,0 +1,27 @@
+version: '2'
+services:
+    app:
+        build:
+            context: .
+            dockerfile: /deploy/nodejs/Dockerfile
+        environment:
+            - DEBUG=false
+        links:
+            - mongo:mongo
+        depends_on:
+            - mongo
+        volumes:
+            - .:/var/www/html
+            - ./logs:/var/log/nodejs
+        ports:
+            - "8080:8080"
+        restart: always
+    mongo:
+        build:
+            context: .
+            dockerfile: /deploy/mongo/Dockerfile
+        ports:
+            - "27017:27017"
+        volumes:
+            - /data/db
+        command: mongod --smallfiles
